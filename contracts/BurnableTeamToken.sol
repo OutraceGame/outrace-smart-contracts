@@ -3,11 +3,14 @@
 pragma solidity >=0.6.2 <0.8.0;
 
 
-import "./Ownable.sol";
 import "./TeamToken.sol";
 import "./BurnableToken.sol";
 
-contract MintBurnTeamToken is TeamToken, ERC20Burnable, Ownable {
+
+
+
+contract BurnableTeamToken is TeamToken, ERC20Burnable {
+
     constructor(
         string memory name,
         string memory symbol,
@@ -20,9 +23,5 @@ contract MintBurnTeamToken is TeamToken, ERC20Burnable, Ownable {
     TeamToken(name, symbol, decimals, supply, owner, feeWallet) 
     {
 
-    }
-
-    function mint(address to, uint256 amount) public onlyOwner {
-        _mint(to, amount);
     }
 }
